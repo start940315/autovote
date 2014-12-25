@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>转发得圣诞大礼~</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	</head>
+	<body>
+		<h1>亲~~您是第{{= num}}个转发者，特定的转发号将获得圣诞大礼！奖品和获奖者将在今晚24：00公布~~敬请期待哦~</h1>
+	</body>
+	<script>
+		var e = {
+		    "appId": "", // 服务号可以填写appId
+		    "imgUrl" : "http://" + window.location.host + $("#share").attr("src"),
+		    "link" : "http://www.weixingate.com/gate.php?back=url&force=1",
+		    "desc" : "我是第" + {{= num }} + "个转发者，特定的转发号将获得圣诞大礼！",
+		    "title" : "圣诞节福利来啦！"
+		};
+		WeixinJSBridge.on("menu:share:timeline", function(){
+			WeixinJSBridge.invoke("shareTimeline", {
+			    appid: e.appId ? e.appId : "",
+			    img_url: e.imgUrl,
+			    link: e.link,
+			    desc: e.title,
+			    title: e.desc,
+			    img_width: "120",
+			    img_height: "120"
+			});
+		});
+	</script>
+</html>
