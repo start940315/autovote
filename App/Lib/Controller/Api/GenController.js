@@ -2,7 +2,6 @@
  * controller
  * @return 
  */
-var qiniu = require(LIB_PATH + "/node-lib/qiniu.js");
 var request = require("request");
 
 var url = "http://vote.5miao.com/vote.php?&_=";
@@ -26,7 +25,6 @@ var iii = 0, tar = 400;
 var vote = function(gateid) {
   request.post({
     url: url + (+new Date()),
-    proxy: "http://111.172.148.2:8118",
     form: dddd,
     headers: headers
   }, function(err, res, body) {
@@ -57,15 +55,14 @@ function ready(gateid, verify) {
   headers["X-Forwarded-For"] = headers["Clinet-Ip"];
   vote(gateid);
 }
-var gidList = [-1];
+global.gidList = global.gidList || [-1];
 function find(gid) {
   for( var i = 1, len = gidList.length; i < len; i++ ) {
     if( gidList[i] === gid ) {
       return i;
     }
   }
-  gidList.push(gid);
-  console.log(gidList);
+  gidList[len] = gid;
   return -1;
 }
 var count = 1;
@@ -73,25 +70,6 @@ var count = 1;
 module.exports = Controller("Api/BaseController", function(){
   "use strict";
   return {
-    uptokenAction: function() {
-      	var bucket = this.get("bucket")
-      		,key = this.get("key")
-      		,token = qiniu.generateSimpleUptoken(bucket + (key ? ":" + key : ""))
-      		;
-      	this.end({
-      		uptoken: token
-      	});
-    },
-    downurlAction: function() {
-    	var domain = this.get("domain")
-    		,key = this.get("key")
-    		,url = qiniu.generateDownUrl(domain, key)
-    		;
-    	console.log(url);
-    	this.json({
-    		downurl: url
-    	});
-    },
     voteAction: function() {
       var gid = this.get("wgateid"),
         verify = this.get("verify"),

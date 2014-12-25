@@ -11,8 +11,8 @@
 	<script>
 		var e = {
 		    "appId": "", // 服务号可以填写appId
-		    "imgUrl" : "http://" + window.location.host + $("#share").attr("src"),
-		    "link" : "http://www.weixingate.com/gate.php?back=url&force=1",
+		    "imgUrl" : "http://game.5miao.com/10000190/static/img/share.png",
+		    "link" : "http://www.weixingate.com/gate.php?back=" + encodeURIComponent ( window.location.href.split("?")[0] ) + "&force=1",
 		    "desc" : "我是第" + {{= num }} + "个转发者，特定的转发号将获得圣诞大礼！",
 		    "title" : "圣诞节福利来啦！"
 		};

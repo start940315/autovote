@@ -4,7 +4,7 @@ module.exports = {
   app_group_list: ['Home', 'Admin', 'Api'], //分组列表
 
   db_type: 'mysql', // 数据库类型
-  db_host: 'http://myinterface-178245.apne1.nitrousbox.com/', // 服务器地址
+  db_host: '127.0.0.1', // 服务器地址
   db_port: '', // 端口
   db_name: '', // 数据库名
   db_user: 'root', // 用户名

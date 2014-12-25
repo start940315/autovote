@@ -1,3 +1,18 @@
 Server running at http://127.0.0.1:8000/
 http://startan-piano.qiniudn.com/pipipi?e=1413801413&token=vZWKNhMlb2ydAQv6-J3TqxCS82gVWbRvapSVWgAp:Pk0pE7gjarB0yHbioxbBXrMJNpk=
 http://startan-piano.qiniudn.com/pipipi?e=1413803874&token=vZWKNhMlb2ydAQv6-J3TqxCS82gVWbRvapSVWgAp:feG86qBQ5V0UGiH6YUHkLMZtqCw=
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module 'thinkjs'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/action/workspace/autovote/www/index.js:7:1)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)

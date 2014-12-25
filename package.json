@@ -52,7 +52,7 @@
     "formstream": "0.0.7",
     "crc32": "0.2.2",
     "urllib": "0.5.1",
-    "request": "0.0.1"
+    "request": "2.51.0"
   },
   "devDependencies": {
     "should": "1.2.2",
